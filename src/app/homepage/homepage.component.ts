@@ -25,5 +25,8 @@ export class HomepageComponent implements OnInit {
     new Post('Steve Harrington - Babysitter', '10/29/17', 'Liamneeson2015', 'strangerthings', 'https://i.redd.it/tcre1evp0zuz.jpg', 5)
 
   ];
+  goToPostPage(clickedPost: Post){
+    this.router.navigate(['posts', clickedPost.id]);
+  };
 
 }
