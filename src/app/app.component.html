@@ -1,18 +1,16 @@
-<nav class="navbar navbar-default">
+<nav class="navbar navbar-expand sticky-top text-white">
   <div class="container-fluid">
-    <div class="navbar-header">
+    <div class="navbar-header text-white">
       <a class="navbar-brand" routerLink="">Didn't Reddit</a>
     </div>
     <ul class="nav navbar-nav navbar-right">
-      <li><a routerLink="post">Aww</a></li>
-      <li><a routerLink="post">Stranger Things</a></li>
-      <li><a routerLink="post">Earth Porn</a></li>
+      <li><a routerLink="aww">Aww</a></li>
+      <li><a routerLink="strangerthings">Stranger Things</a></li>
+      <li><a routerLink="earthporn">Earth Porn</a></li>
     </ul>
   </div>
 </nav>
 
 <div class="container">
-  <h1>
-    <router-outlet></router-outlet>
-  </h1>
+  <router-outlet></router-outlet>
 </div>

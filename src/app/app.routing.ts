@@ -10,7 +10,7 @@ const appRoutes: Routes = [
     component: HomepageComponent
   },
   {
-    path: 'posts/:id',
+    path: ':subreddit/posts/:id',
     component: PostpageComponent
   },
   {

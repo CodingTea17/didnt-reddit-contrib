@@ -12,10 +12,19 @@ export class PostService {
   }
 
   getPostById(postId: number){
-    for (var i = 0; i <= POSTS.length - 1; i++) {
+    for (let i = 0; i <= POSTS.length - 1; i++) {
       if (POSTS[i].id === postId) {
         return POSTS[i];
       }
     }
+  }
+  getPostsBySubreddit(subreddit: string){
+    let output: Post[] = []
+    for (let i = 0; i <= POSTS.length -1; i++){
+      if (POSTS[i].subreddit === subreddit){
+        output.push(POSTS[i]);
+      }
+    }
+    return output;
   }
 }

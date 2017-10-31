@@ -1,3 +1,5 @@
-<p>
-  subreddit works!
-</p>
+<div class='card mb-4 bg-secondary' *ngFor="let post of postsToDisplay">
+  <div class='card-body'>
+    <p>{{post.title}} {{post.date}} {{post.author}} {{post.subreddit}} {{post.link}} {{post.id}}</p>
+  </div>
+</div>

@@ -20,7 +20,7 @@ export class HomepageComponent implements OnInit {
 
 
   goToPostPage(clickedPost: Post){
-    this.router.navigate(['posts', clickedPost.id]);
+    this.router.navigate([clickedPost.subreddit, 'posts', clickedPost.id]);
   };
 
 }
