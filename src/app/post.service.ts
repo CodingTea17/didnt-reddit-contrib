@@ -1,14 +1,19 @@
 import { Injectable } from '@angular/core';
 import { Post } from './post.model';
 import { POSTS } from './mock-posts';
+import { AngularFirestore } from 'angularfire2/firestore';
+import { Observable } from 'rxjs/Observable';
 
 @Injectable()
 export class PostService {
+  posts: Observable<any[]>;
 
-  constructor() {}
+  constructor(database: AngularFirestore) {
+    this.posts = database.collection('posts').valueChanges();
+  }
 
   getPosts() {
-    return POSTS;
+    return this.posts
   }
 
   getPostById(postId: number){

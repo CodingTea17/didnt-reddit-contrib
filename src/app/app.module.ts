@@ -10,6 +10,19 @@ import { routing } from './app.routing';
 import { SubredditComponent } from './subreddit/subreddit.component';
 import { PostpageComponent } from './postpage/postpage.component';
 
+import { masterFirebaseConfig } from './api-keys';
+import { AngularFireModule } from 'angularfire2';
+import { AngularFirestoreModule } from 'angularfire2/firestore';
+
+
+export const firebaseConfig = {
+  apiKey: masterFirebaseConfig.apiKey,
+  authDomain: masterFirebaseConfig.authDomain,
+  databaseURL: masterFirebaseConfig.databaseURL,
+  storageBucket: masterFirebaseConfig.storageBucket,
+  projectId: masterFirebaseConfig.projectId
+};
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,7 +34,9 @@ import { PostpageComponent } from './postpage/postpage.component';
     BrowserModule,
     FormsModule,
     HttpModule,
-    routing
+    routing,
+    AngularFireModule.initializeApp(firebaseConfig),
+    AngularFirestoreModule
   ],
   providers: [],
   bootstrap: [AppComponent]

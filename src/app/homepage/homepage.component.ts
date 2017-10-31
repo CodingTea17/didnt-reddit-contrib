@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Post }  from '../post.model';
 import { PostService } from '../post.service';
+import { AngularFirestore } from 'angularfire2/firestore';
+import { Observable } from 'rxjs/Observable';
 
 @Component({
   selector: 'app-homepage',
@@ -10,12 +12,13 @@ import { PostService } from '../post.service';
   providers: [PostService]
 })
 export class HomepageComponent implements OnInit {
-  posts: Post[];
+  posts: Observable<any[]>;
 
   constructor(private router: Router, private postService: PostService) {}
 
   ngOnInit() {
     this.posts = this.postService.getPosts();
+
   }
 
 
