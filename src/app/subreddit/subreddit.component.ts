@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, DoCheck  } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
 import { Location } from '@angular/common';
 import { Post } from '../post.model';
@@ -10,7 +10,7 @@ import { PostService } from '../post.service';
   styleUrls: ['./subreddit.component.css'],
   providers: [PostService]
 })
-export class SubredditComponent implements OnInit {
+export class SubredditComponent implements DoCheck {
   subreddit: string;
   postsToDisplay: Post[];
   constructor(
@@ -19,7 +19,7 @@ export class SubredditComponent implements OnInit {
     private postService: PostService
   ) { }
 
-  ngOnInit() {
+  ngDoCheck(){
     this.route.params.forEach((urlParameters) => {
       this.subreddit = urlParameters['subreddit'];
     });
