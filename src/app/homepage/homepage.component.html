@@ -3,6 +3,6 @@
 
   <div class='card mb-4 bg-secondary' *ngFor="let post of posts | async" (click)="goToPostPage(post)">
     <div class='card-body'>
-      <p>{{post.title}} {{post.date}} {{post.author}} {{post.subreddit}} {{post.link}} {{post.id}}</p>
+      <p>{{post.data.title}} {{post.data.date}} {{post.data.author}} {{post.data.subreddit}} {{post.data.link}} {{post.data.id}}</p>
     </div>
   </div>

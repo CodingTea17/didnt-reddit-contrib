@@ -1,5 +1,6 @@
-<div class='card mb-4 bg-secondary' *ngFor="let post of postsToDisplay">
+<div class='card mb-4 bg-secondary' *ngFor="let post of postsToDisplay | async">
   <div class='card-body'>
-    <p>{{post.title}} {{post.date}} {{post.author}} {{post.subreddit}} {{post.link}} {{post.id}}</p>
+    <h1>Post ID: {{post.id}}</h1>
+    <p>{{post.data.title}} {{post.data.date}} {{post.data.author}} {{post.data.subreddit}} {{post.data.link}} {{post.data.id}}</p>
   </div>
 </div>

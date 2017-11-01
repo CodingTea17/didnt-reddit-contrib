@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Post }  from '../post.model';
 import { PostService } from '../post.service';
-import { AngularFirestore } from 'angularfire2/firestore';
 import { Observable } from 'rxjs/Observable';
 
 @Component({
@@ -18,12 +17,11 @@ export class HomepageComponent implements OnInit {
 
   ngOnInit() {
     this.posts = this.postService.getPosts();
-
   }
 
 
-  goToPostPage(clickedPost: Post){
-    this.router.navigate([clickedPost.subreddit, 'posts', clickedPost.id]);
+  goToPostPage(clickedPost: any){
+    this.router.navigate([clickedPost.data.subreddit, 'posts', clickedPost.id]);
   };
 
 }

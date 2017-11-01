@@ -1,7 +1,7 @@
 <div>
-  <h3>{{postToDisplay.title}}</h3>
-  <h4>{{postToDisplay.date}}</h4>
-  <p>{{postToDisplay.author}}</p>
-  <p>{{postToDisplay.subreddit}}</p>
-  <a href='{{postToDisplay.link}}'>{{postToDisplay.link}}</a>
+  <h3>{{(postToDisplay | async)?.title}}</h3>
+  <h4>{{(postToDisplay | async)?.date}}</h4>
+  <p>{{(postToDisplay | async)?.author}}</p>
+  <p>{{(postToDisplay | async)?.subreddit}}</p>
+  <a href='{{(postToDisplay | async)?.link}}'>{{(postToDisplay | async)?.link}}</a>
 </div>
